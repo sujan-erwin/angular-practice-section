@@ -1,0 +1,18 @@
+<section>
+  <p [style]="{color:'pink'}">{{ title }}</p>
+
+  <input id="userName" type="text" [(ngModel)]="userName"/>
+
+  <button type="button"
+          [style]="{color: buttonColor}"
+          [disabled]="!isEnabled"
+          (click)="addEmployee()">
+          Add
+  </button>
+
+ <p>{{ userName}}</p>
+
+ <!--need to loop each employee-->
+
+   <app-employee></app-employee>
+</section>
