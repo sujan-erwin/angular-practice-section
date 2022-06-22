@@ -1,7 +1,7 @@
 <section>
   <p [style]="{color:'pink'}">{{ title }}</p>
 
-  <input id="userName" type="text" [(ngModel)]="userName"/>
+  <!-- <input id="userName" type="text" [(ngModel)]="userName"/>
 
   <button type="button"
           [style]="{color: buttonColor}"
@@ -10,9 +10,19 @@
           Add
   </button>
 
- <p>{{ userName}}</p>
+ <p>{{ userName}}</p> -->
 
- <!--need to loop each employee-->
+  <!--need to loop each employee-->
 
-   <app-employee></app-employee>
+  <ng-container *ngIf="employees && employees.length">
+    <app-employee *ngFor="let emp of employees; let i=index;"
+                   [employee]="emp">
+    </app-employee>
+  </ng-container>
+
+  <!-- <ul>
+    <li *ngFor="let num of numerList; let i=index;">
+      {{ num }} position: {{ i }}
+    </li>
+  </ul> -->
 </section>

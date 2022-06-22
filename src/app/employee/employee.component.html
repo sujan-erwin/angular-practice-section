@@ -1,3 +1,11 @@
 <section>
-  <p>{{ header}}</p>
+  <p [ngClass]="{
+          'blue-high-lighter':  !highLighter(employee?.id),
+          'yellow-high-lighter': highLighter(employee?.id)
+        }">
+        id: {{ employee?.id}}
+   </p>
+  <p [ngStyle]="{'color': 'deeppink'}">name: {{ employee?.name}}</p>
+  <p>age: {{ employee?.age}}</p>
+  <p>-----------------------------------------</p>
 </section>
